@@ -26,5 +26,7 @@ int main()
     scanf("%d",&A[i]);
     for(int j=0; j<size_B; j++)
     scanf("%d",&B[j]);
+    for(int i=0; i<size_A; i++) printf("%d ", A[i]);
+    for(int j=0; j<size_B; j++) printf("%d ", B[j]); 
     Merge();
 }
