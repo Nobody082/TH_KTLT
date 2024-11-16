@@ -1,0 +1,54 @@
+Struct fraction:
+	biến int num
+	biến int den
+hàm int gcd(int a, int b)
+Bước 1: a=abs(a), b=abs(b)
+Bước 2: nếu a=0 hoặc b=0 thì trả về giá trị a+b
+Bước 3: vòng lặp while, nếu a!=b thì chuyển sang bước 4, ngược lại chuyển sang bước6 
+Bước 4: nếu a<b thì b=b-a, ngược lại thì a=a-b-a
+Bước 5: quay lại bước 3
+Bước 6: trả về giá trị a
+
+hàm int lcm(int a, int b)
+Bước 1: trả về a*b/gcd(a,b)
+
+hàm void Shorten(fraction* a)
+Bước 1: tạo biến GCD=gcd(a->den, a->num)
+Bước 2: a->den/=GCD
+Bước 3: a->num/=GCD
+
+hàm fraction sum(fraction a, fraction b)
+Bước 1: tạo biến LCM_den=lcm(a.den, b.den)
+Bước 2: tạo biến fraction res
+Bước 3: res.num=a.num*LCM_den/a.den + b.num*LCM_den/b.den
+Bước 4: res.den=LCM_den
+Bước 5: rút gọn phân số res bằng hàm Shorten(&res)
+Bước 6: trả về res
+
+hàm fraction ded(fraction a, fraction b)
+Bước 1: tạo biến LCM_den=lcm(a.den,b.den)
+Bước 2: tạo biến fraction res
+Bước 3: res.num=a.num*LCM_den/a.den-b.num*LCM_den/b.den
+Bước 4: res.den=LCM_den
+Bước 5: Rút gọn phân số res bằng hàm Shorten(&res)
+Bước 6: trả về res
+
+hàm fraction mul(fraction a, fraction b)
+Bước 1: tạo biến fraction res với res->num=a.num*b.num, res->den=a.den*b.den;
+Bước 2: rút gọn phân số res bằng hàm Shorten(&res)
+Bước 3: trả về res
+
+hàm fraction Div(fraction a, fraction b)
+Bước 1: tạo biến tmp=b.num
+Bước 2: b.num=b.den
+Bước 3: b.den=tmp
+Bước 4: trả về hàm mul(a,b)
+
+hàm void Print(fraction a):
+	nếu a.num%a.den==0 thì in ra a.num/a.den, ngược lại thì in ra a.num và a.den cách nhau bằng kí tự '/'
+
+hàm int main()
+Bước 1: tạo 2 biến fraction a và b 
+Bước 2: Nhập vào các giá trị a.num,a.den, b.num, b.den
+Bước 3: tạo các biến fraction Tong=sum(a,b), Hieu=ded(a,b), Tich=mul(a,b), Thuong= Div(a,b)
+Bước 4: in ra các biến Tong, Hieu, Tich, Thuong, mỗi giá trị cách nhau bằng kí tự '\n'

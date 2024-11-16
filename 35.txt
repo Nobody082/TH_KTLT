@@ -1,0 +1,23 @@
+Bài 35:
+b1: Khởi tạo mảng A có kích thước 100000 phần tử; biến n,tmp=0, size=1
+b2: gán phần tử A[0]=1;
+b3: Nhập vào n từ bàn phím
+b4: vòng lặp for, biến i chạy từ 2 đến n, bước nhảy 1
+b5: vòng lặp for, biến j chạy từ 1 đến size, bước nhảy 1
+b6: tạo biến save=tmp
+b7: tmp=tmp+A[j]*i
+b8: A[j]=(A[j]*i+save)%10
+b9: tmp=tmp/10;
+b10: nếu j<size thì quay lại bước 6
+b11: tăng giá trị của size lên 1, A[size]=tmp%10;
+b12: tmp=tmp/10;
+b13: nếu tmp>0 thì quay lại bước 11
+b14: nếu i<n thì quay lại bước 5
+b15: vòng lặp for, biến i chạy từ size về 1, bước nhảy -1; in ra các giá trị A[i];
+
+
+input 1: 10
+output 1: 3628800
+
+input 2: 50
+output 2: 30414093201713378043612608166064768844377641568960512000000000000

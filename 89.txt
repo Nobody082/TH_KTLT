@@ -1,0 +1,61 @@
+Khởi tạo:
+	Hai mảng int a,b có thể chứa tối đa 500000 phần tử
+	int size_a=0, size_b=0
+Hàm void INPUT()
+Bước 1: Tạo 2 mảng char str1, str2 có thể chứa tối đa 500000 phần tử
+Bước 2: Nhập chuỗi kí tự vào mảng str1 và str2 
+Bước 3: size_a=strlen(str1), size_b=strlen(str2)
+Bước 4: vòng lặp for, biến i chạy từ 0 đến size_a-1, bước nhảy 1, chuyển các kí tự str1[size_a-1-i] từ kiểu char thành kiểu int rồi gán vào a[i]
+Bước 5: vòng lặp for, biến i chạy từ 0 đến size_b-1, bước nhảy 1, chuyển các kí tự str2[size_b-1-i] từ kiểu char thành kiểu int rồi gán vào b[i]
+ 
+Hàm void Sum()
+Bước 1: Vòng lặp while, điều kiện size_a!=size_b, nếu không thỏa mãn thì chuyển đến bước 3
+Bước 2: Nếu size_a<size_b thì a[size_a]=0 và tăng size_a lên 1 đơn vị
+		Ngược lại thì b[size_b]=0 và tăng size_b lên 1 đơn vị
+		Quay lại bước 1
+Bước 3: khởi tạo mảng int res có kích thước size_a-1
+		khởi tạo biến bool tmp=false;
+Bước 4: vòng lặp for, biến i chạy từ 0 đến size_a-2, bước nhảy 1
+Bước 5: tạo biến int x=a[i]+b[i]+tmp
+Bước 6: res[i]=x%10	
+Bước 7: tmp=x/10
+Bước 8: nếu i<size_a-2 thì quay lại bước 5
+Bước 9: res[size_a-1]=a[size_a-1]+b[size_a-1]+tmp
+Bước 10: vòng lặp for, biến i chạy từ size_a-1 về 0, bước nhảy -1, in các giá trị res[i]
+
+hàm void swap()
+Bước 1: vòng lặp for, biến i chạy từ size_a-1 về 0, bước nhảy -1
+Bước 2: tạo biến tmp=a[i]
+Bước 3: a[i]=b[i]
+Bước 4: b[i]=tmp;
+bước 5: nếu i>0 thì quay lại bước 2;
+
+hàm void Ded()
+Bước 1: Tạo biến bool minus=0
+Bước 2: Vòng lặp while, điều kiện size_a!=size_b, nếu không thỏa mãn thì chuyển đến bước 4
+Bước 3: Nếu size_a<size_b thì a[size_a]=0 và tăng size_a lên 1 đơn vị
+		Ngược lại thì b[size_b]=0 và tăng size_b lên 1 đơn vị
+		Quay lại bước 2
+Bước 4: vòng lặp for, biến i chạy từ size_a-1 về 0, bước nhảy -1
+Bước 5: Nếu a[i]>b[i] thì chuyển đến bước 7
+		Ngược lại nếu a[i]<b[i] thì gọi hàm swap() và gán minus=true, chuyển đến bước 7
+Bước 6: Nếu i>0 thì quay lại bước 5
+Bước 7: Tạo mảng res có size_a phần tử, biến bool tmp = false
+Bước 8: tạo biến i=0
+Bước 9: gán res[i]=a[i]-b[i]-tmp
+Bước 10: nếu res[i]<0  thì res[i]=res[i]+10 đồng thời gán biến tmp=true
+		 ngược lại thì gán tmp=false
+Bước 11: Tăng i lên 1 đơn vị, nếu i<size_a-1 thì quay lại bước 9
+Bước 12: gán res[size_a-1]=a[size_a-1]-b[size_a-1]-tmp
+Bước 13: Nếu res[size_a-1]=0 và size_a>1 thì giảm size_a đi 1 đơn vị
+		 Ngược lại thì chuyển đển bước 15
+Bước 14: Quay lại bước 13
+Bước 15: nếu (size_a!=1 hoặc res[0]!=0) và minus=true thì in ra dấu '-'
+Bước 16: Tạo biến i và gán i=size_a-1
+Bước 17: in giá trị res[i]
+Bước 18: giảm i đi 1 đơn vị, nếu i>=0 thì quay lại bước 17
+
+hàm int main()
+Bước 1: gọi hàm INPUT()
+Bước 2: gọi hàm Sum()
+Bước 3: Gọi hàm Ded()

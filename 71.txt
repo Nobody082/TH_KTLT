@@ -1,0 +1,40 @@
+Khởi tạo:
+	Mảng A và B kiểu int đều có thể chứa tối đa 50000 phần tử
+	biến kiểu int size_A=0 và size_B=0
+Hàm void Merge()
+Bước 1: khởi tạo hai biến kiểu int i=0 và j=0
+Bước 2: Nếu A[i]>=B[j] thì tiếp tục, ngược lại thì chuyển đến bước 6
+Bước 3: in ra phần tử A[i]
+Bước 4: tăng biến i lên 1 đơn vị
+Bước 5: Chuyển đến bước
+Bước 6: in ra phần tử B[i]
+Bước 7: tăng biến j lên 1 đơn vị
+Bước 8: nếu i<size_A và j<size_B thì quay lại bước 2
+Bước 9: vòng lặp for, biến i tiếp tục chạy đến size_A-1; in ra các phần tử A[i];
+Bước 10: vòng lặp for, biến j tiếp tục chạy đến size_B-1; in ra các phần tử B[j];
+
+Hàm int main()
+Bước 1: Nhập giá trị của size_A  và size_B từ bàn phím
+Bước 2: vòng lặp for, biến i chạy từ 0 đến size_A-1, nhập vào các phần tử A[i]
+Bước 3: vòng lặp for, biến j chạy từ 0 đến size_B-1, nhập vào các phần tử B[j]
+Bước 4: vòng lặp for, biến i chạy từ 0 đến size_A-1, in ra các phần tử A[i]
+Bước 5: vòng lặp for, biến j chạy từ 0 đến size_B-1, in ra các phần tử B[j]
+Bước 6: Gọi hàm Merge()
+
+input 1:
+	10 8
+	73 68 66 60 55 49 48 42 37 34
+	98 91 85 79 73 70 67 61
+output 1:
+	73 68 66 60 55 49 48 42 37 34 
+	98 91 85 79 73 70 67 61
+	98 91 85 79 73 73 70 68 67 66 61 60 55 49 48 42 37 34
+	
+input 2: 
+	6 3
+	8 6 4 3 2 0
+	9 5 3
+output 2:
+	8 6 4 3 2 0 
+	9 5 3 
+	9 8 6 5 4 3 3 2 0 
