@@ -1,67 +1,73 @@
-Struct fraction:
-	biến int num
-	biến int den
-hàm int gcd(int a, int b)
-Bước 1: gán a=abs(a), b=abs(b)
-Bước 2: nếu a=0 hoặc b=0 thì trả về giá trị a+b 
-Bước 3: nếu a<b thì b=b-a, ngược lại thì a=a-b-a
-Bước 4: nếu a!=b thì quay lại bước 3
-Bước 5: trả về giá trị a
+Khởi tạo:
+	Hai mảng int a,b chứa 500000 phần tử
+	int size_a=0, size_b=0
+Hàm void INPUT()
+Bước 1: Tạo 2 mảng char str1, str2 có thể chứa tối đa 500000 phần tử
+Bước 2: Nhập chuỗi kí tự vào mảng str1 và str2 
+Bước 3: gán size_a=strlen(str1), size_b=strlen(str2)
+Bước 4: vòng lặp for: biến i chạy từ 0 đến size_a-1, bước nhảy 1, chuyển các kí tự str1[size_a-1-i] từ kiểu char thành kiểu int rồi gán vào a[i]
+Bước 5: vòng lặp for: biến i chạy từ 0 đến size_b-1, bước nhảy 1, chuyển các kí tự str2[size_b-1-i] từ kiểu char thành kiểu int rồi gán vào b[i]
+ 
+Hàm void Sum()
+Bước 1: Nếu size_a<size_b thì a[size_a]=0 và tăng size_a lên 1 đơn vị
+		Ngược lại thì b[size_b]=0 và tăng size_b lên 1 đơn vị
+Bước 2: nếu size_a!=size_b thì quay lại bước 1
+Bước 3: khởi tạo mảng int res có kích thước size_a-1 và biến bool tmp=false;
+Bước 4: tạo biến i=0
+Bước 5: tạo biến int x=a[i]+b[i]+tmp
+Bước 6: gán res[i]=x%10	
+Bước 7: gán tmp=x/10
+Bước 8: tăng i lên 1 đơn vị nếu i<size_a-1 thì quay lại bước 5
+Bước 9: gán res[size_a-1]=a[size_a-1]+b[size_a-1]+tmp
+Bước 10: vòng lặp for: biến i chạy từ size_a-1 về 0, bước nhảy -1, in các giá trị res[i]
 
-hàm int lcm(int a, int b)
-Bước 1: trả về a*b/gcd(a,b)
+hàm void swap()
+Bước 1: tạo biến i=size_a-1
+Bước 2: tạo biến tmp=a[i]
+Bước 3: a[i]=b[i]
+Bước 4: b[i]=tmp;
+bước 5: giảm biến i đi 1 đơn vị, nếu i>=0 thì quay lại bước 2;
 
-hàm void Shorten(fraction* a)
-Bước 1: tạo biến int GCD=gcd(a->den, a->num)
-Bước 2: gán a->den/=GCD
-Bước 3: gán a->num/=GCD
-
-hàm fraction sum(fraction a, fraction b)
-Bước 1: tạo biến int LCM_den=lcm(a.den, b.den)
-Bước 2: tạo biến fraction res
-Bước 3: gán res.num=a.num*LCM_den/a.den + b.num*LCM_den/b.den
-Bước 4: gán res.den=LCM_den
-Bước 5: rút gọn phân số res bằng hàm Shorten(&res)
-Bước 6: trả về res
-
-hàm fraction ded(fraction a, fraction b)
-Bước 1: tạo biến LCM_den=lcm(a.den,b.den)
-Bước 2: tạo biến fraction res
-Bước 3: gán res.num=a.num*LCM_den/a.den-b.num*LCM_den/b.den
-Bước 4: gán res.den=LCM_den
-Bước 5: Rút gọn phân số res bằng hàm Shorten(&res)
-Bước 6: trả về res
-
-hàm fraction mul(fraction a, fraction b)
-Bước 1: tạo biến fraction res và gán res->num=a.num*b.num, res->den=a.den*b.den;
-Bước 2: rút gọn phân số res bằng hàm Shorten(&res)
-Bước 3: trả về res
-
-hàm fraction Div(fraction a, fraction b)
-Bước 1: tạo biến tmp=b.num
-Bước 2: gán b.num=b.den
-Bước 3: gán b.den=tmp
-Bước 4: trả về hàm mul(a,b)
-
-hàm void Print(fraction a):
-	nếu a.num%a.den==0 thì in ra a.num/a.den, ngược lại thì in ra a.num và a.den cách nhau bằng kí tự '/'
+hàm void Ded()
+Bước 1: Tạo biến bool minus=0
+Bước 2: nếu size_a!=size_b thì tiếp tục, ngược lại thì chuyển đến bước 5
+Bước 3: Nếu size_a<size_b thì a[size_a]=0 và tăng size_a lên 1 đơn vị
+		Ngược lại thì b[size_b]=0 và tăng size_b lên 1 đơn vị
+Bước 4: Quay lại bước 2
+Bước 5: tạo biến i=size_a-1, bước nhảy -1
+Bước 6: Nếu a[i]>b[i] thì chuyển đến bước 7
+		Ngược lại nếu a[i]<b[i] thì gọi hàm swap() và gán minus=true, chuyển đến bước 7
+Bước 7: Nếu i>=0 thì quay lại bước 6
+Bước 8: Tạo mảng res có size_a phần tử, biến bool tmp = false
+Bước 9: tạo biến i=0
+Bước 10: gán res[i]=a[i]-b[i]-tmp
+Bước 11: nếu res[i]<0  thì res[i]=res[i]+10 đồng thời gán biến tmp=true
+		 ngược lại thì gán tmp=false
+Bước 12: Tăng i lên 1 đơn vị, nếu i<size_a-1 thì quay lại bước 10
+Bước 13: gán res[size_a-1]=a[size_a-1]-b[size_a-1]-tmp
+Bước 14: Nếu res[size_a-1]=0 và size_a>1 thì giảm size_a đi 1 đơn vị
+		 Ngược lại thì chuyển đển bước 16
+Bước 15: Quay lại bước 14
+Bước 16: nếu (size_a!=1 hoặc res[0]!=0) và minus=true thì in ra dấu '-'
+Bước 17: Tạo biến int i =size_a-1
+Bước 18: in giá trị res[i]
+Bước 19: giảm i đi 1 đơn vị, nếu i>=0 thì quay lại bước 18
 
 hàm int main()
-Bước 1: tạo 2 biến fraction a và b 
-Bước 2: Nhập vào các giá trị a.num,a.den, b.num, b.den từ bàn phím
-Bước 3: tạo các biến fraction Tong=sum(a,b), Hieu=ded(a,b), Tich=mul(a,b), Thuong= Div(a,b)
-Bước 4: in ra các biến Tong, Hieu, Tich, Thuong, mỗi giá trị cách nhau bằng kí tự '\n'
-
-input 1: 3 4 8 2
+Bước 1: gọi hàm INPUT()
+Bước 2: gọi hàm Sum()
+Bước 3: Gọi hàm Ded()
+ 
+input 1: 
+	26624732647823234
+	623746237423747234234
 output 1:
-	19/4
-	-13/4
-	3
-	3/16
-	
-input 2: 1 7 9 23 
+	Tong: 623772862156395057468
+	Hieu: -623719612691099411000
+
+input 2: 
+	1999999999999999999999999999999999999999999
+	1
 output 2:
-	86/161
-	-40/161
-	9/161
-	23/63
+	Tong: 2000000000000000000000000000000000000000000
+	Hieu: 1999999999999999999999999999999999999999998
