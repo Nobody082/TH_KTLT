@@ -1,0 +1,65 @@
+# Định nghĩa hằng số và khai báo mảng
+Bước 1: Định nghĩa MAX là 100, để giới hạn kích thước lớn nhất của mảng
+Bước 2: Khai báo mảng a[MAX][MAX] để lưu ma trận n x n
+
+# Hàm nhapMaTran()
+Bước 1: Duyệt qua từng hàng và cột của ma trận bằng hai vòng lặp for
+Bước 2: Sử dụng scanf để đọc từng giá trị từ người dùng và gán vào a[i][j]
+
+# Hàm xuatMaTran()
+Bước 1: Duyệt qua từng phần tử của ma trận bằng hai vòng lặp for
+Bước 2: Sử dụng printf để in từng phần tử ra màn hình, kèm theo khoảng trắng
+Bước 3: Sau khi in xong một hàng, in ký tự xuống dòng \n
+
+# Hàm Min()
+Bước 1: Khởi tạo biến tongMin=0 để lưu tổng các giá trị nhỏ nhất của từng hàng
+Bước 2: Gán phần tử đầu tiên của hàng làm giá trị nhỏ nhất (min) và lưuw chỉ số của nó vào minIndex
+Bước 3: duyệt qua các cột còn lại của hàng để tìm giá trị nhỏ nhất và cập nhật min và minIndex
+Bước 4: Cộng giá trị nhỏ nhất của hàng đó (min) vào tongMin
+Bước 5: Hoán đổi giá trị nhỏ nhất trong hàng với phần tử nằm trên đường chéo phụ (phần tử ở vị trí a[i][n-i-1]). Sử dụng biến tạm (temp) để thực hiện việc hoán đổi
+
+# Hàm main()
+Bước 1: Khai báo biến n
+Bước 2: Khai báo biến a[MAX][MAX]
+Bước 3: Nhập giá trị n từ bàn phím, đảm bảo n>0 bằng cách sử dụng vòng lặp do-while
+Bước 4: Gọi hàm nhapMaTran() để nhập giá trị vào ma trận
+Bước 5: Gọi hàm xuatMaTran() để in ma trận ban đầu
+Bước 6: Gọi hàm Min để tìm tổng các phần tử nhỏ nhất (tongMin), thực hiện hoán đổi phần tử nhỏ nhất với phần tử trên đường chéo phụ
+Bước 7: In ma trận sau khi hoán đổi bằng cách gọi lại xuatMaTran
+Bước 8: In tổng giá trị các phần tử nhỏ nhất (tongMin)
+Bước 9: Trả về 0 từ hàm main() để kết thúc chương trình
+
+Input 1:
+3
+2 8 1
+6 5 9
+7 4 3
+Output 1:
+2 8 1
+6 5 9
+7 4 3
+
+1 8 2
+6 5 9
+7 4 3
+
+9
+
+Input 2:
+4
+5 8 2 6
+1 9 3 7
+2 5 4 6
+7 8 3 9
+Output 2:
+5 8 2 6
+1 9 3 7
+2 5 4 6
+7 8 3 9
+
+5 8 6 2
+3 9 1 7
+5 2 4 6
+3 8 7 9
+
+8
