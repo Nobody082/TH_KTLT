@@ -1,0 +1,26 @@
+# Hàm chinhphuong
+1. Tham số đầu vào: int n - số nguyên dương cần phân tích
+2. Logic thực hiện:
+- Sử dụng vòng lặp while để tiếp tục phân tích cho đến khi n=0
+- Tìm số nguyên k sao cho k^2 <= n bằng cách lấy cawn bậc hai của n và chuyển kết quả về số nguyên (int)
+- Tính s=k^2, tức là số chính phương lớn nhất nhỏ hơn hoặc bằng n
+- Giảm n đi giá trị s (n -= s)
+- In ra giá trị k^2 dưới dạng k^2 với printf("%d^2", k)
+- Nếu n>0 (vẫn còn số cần phân tích), in thêm dấu cộng
+- Khi n=0, kết thúc vòng lặp và in dấu xuống dòng
+
+# Hàm main
+- Khai báo biến n
+- Nhập giá trị n từ bàn phím
+- Gọi hàm chinhphuong, truyền giá trị n vào hàm chinhphuong để thực hiện phân tích
+- Trả về giá trị 0 để chỉ báo chương trình đã kết thúc thành công
+
+Input1:
+30
+Output1:
+5^2 + 2^2 + 1^2
+
+Input2:
+45
+Output2:
+6^2 + 3^2
