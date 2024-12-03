@@ -1,5 +1,5 @@
 # Hàm chinhphuong
-1. Tham số đầu vào: int n - số nguyên dương cần phân tích
+1. Tham số đầu vào: long long n 
 2. Logic thực hiện:
 - Sử dụng vòng lặp while để tiếp tục phân tích cho đến khi n=0
 - Tìm số nguyên k sao cho k^2 <= n bằng cách lấy cawn bậc hai của n và chuyển kết quả về số nguyên (int)
