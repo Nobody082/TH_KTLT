@@ -12,11 +12,9 @@ double tinh(double a, double x, int n) {
 int main() {
     double a, x;
     int n;
-    scanf("%lf", &a);
-    scanf("%lf", &x);
-    scanf("%d", &n);
+    scanf("%lf%lf%d", &a, &x, &n);
     if (n < 0) {
-        printf("Giá tri n phai la so tu nhien!\n");
+        printf("GiÃ¡ tri n phai la so tu nhien!\n");
     } else {
         double kq = tinh(a, x, n);
         printf("%.2f\n", kq);
