@@ -1,0 +1,48 @@
+# Hàm nhap
+Bước 1: Chương trình lặp qua từng hàng i và từng cột j của ma trận
+Bước 2: Đọc và lưu giá trị vào phần tử mat[i][j]
+
+# Hàm xuat
+Bước 1: Lặp qua từng hàng i và từng cột j
+Bước 2: In giá trị từng phần tử mat[i][j] với 2 chữ số thập phân và căn chỉnh độ rộng 8
+
+# Hàm nghichdao
+Bước 1: Sao chép ma trận gốc mat vào ma trận tạm temp
+Bước 2: Khởi tạo ma trận đơn vị dao
+Bước 3: Kiểm tra và xử lý nếu phần tử chéo chính temp[i][i] bằng 0 (không thể tính nghịch đảo)
+Bước 4: Biến đổi ma trận thàng dạng bậc thang
+Bước 5: Sử dụng phép toán hàng để đưa ma trận temp về ma trận đơn vị và đồng thời biến đổi dao để thành ma trận nghịch đảo
+Bước 6: Chia tất cả các phần tử trong hàng cho phần tử chéo chính temp[i][i] để đưa temp về ma trận đơn vị
+
+# Hàm main
+Bước 1: Khởi tạo biến n
+Bước 2: Nhập giá trị n từ bàn phím
+Bước 3: Gọi hàm nhap để nhập các phần tử trong ma trận từ bàn phím
+Bước 4: Gọi hàm xuat để xuất ma trận vừa nhập
+Bước 5: Gọi hàm nghichdao để tính toán
+Bước 6: Nếu ma trận khả nghịch, in ma trận nghịch đảo. Ngược lại, nếu không khả nghịch, thông báo lỗi
+Bước 7: Kết thúc chương trình và trả về giá trị 0 báo hiệu rằng chương trình đã thực thi thành công
+
+Input1:
+2
+4 7
+2 6
+Output1:
+    4.00      7.00 
+    2.00      6.00 
+
+    0.60     -0.70 
+   -0.20      0.40 
+
+Input2:
+3
+1 2 3
+4 5 6
+7 8 9
+Output2:
+    1.00      2.00      3.00 
+    4.00      5.00      6.00 
+    7.00      8.00      9.00 
+
+Ma trận không khả nghịch.
+
