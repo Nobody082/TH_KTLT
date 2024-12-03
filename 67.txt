@@ -1,0 +1,40 @@
+# Hàm nhap
+Bước 1: Chạy vòng lặp từ i=0 đến i=n-1
+Bước 2: Đọc từng phần tử từ bàn phím bằng scanf và lưu vào a[i]
+
+# Hàm xuat
+Bước 1: Chạy vòng lặp từ i=0 đến i=n-1
+Bước 2: In từng phần tử của mảng a với định dạng số thực (%lf)
+
+# Hàm sosanh
+Bước 1: Chuyển đổi con trỏ void* thành con trỏ double*
+Bước 2: Tính hiệu số dif giữa hai số thực
+BƯớc 3 Trả về giá trị:
+- 1 nếu b > a (giảm dần)
+- -1 nếu b < a
+- 0 nếu bằng nhau
+
+# Hàm main
+Bước 1: Khai báo biến n
+Bước 2: Nhập số lượng phần tử n từ bàn phím
+Bước 3: Cấp phát bộ nhớ động cho mảng a với kích thước n phần tử
+Bước 4: Kiểm tra nếu không đủ bộ nhớ (a == NULL), in thông báo lỗi và thoát chương trình
+Bước 5: Gọi hàm nhap để nhập các phần tử vào mảng a
+Bước 6: Gọi hàm xuat để in các phần tử vừa nhập ra màn hình
+Bước 7: Gọi hàm qsort để sắp xếp mảng a theo thứ tự giảm dần
+Bước 8: In các phần tử của mảng sau khi sắp xếp ra màn hình
+Bước 9: Giải phóng bộ nhớ động đã được cấp phát cho mảng a
+
+Input1:
+5
+3.2 1.5 4.7 2.1 5.0
+Output2:
+3.200000 1.500000 4.700000 2.100000 5.000000 
+5.000000 4.700000 3.200000 2.100000 1.500000 
+
+Input2:
+4
+-1.2 -3.4 -0.5 -2.2
+Output2:
+-1.200000 -3.400000 -0.500000 -2.200000 
+-0.500000 -1.200000 -2.200000 -3.400000
