@@ -1,13 +1,12 @@
 # Hàm chinhphuong
-1. Tham số đầu vào: long long n 
-2. Logic thực hiện:
-- Sử dụng vòng lặp while để tiếp tục phân tích cho đến khi n=0
-- Tìm số nguyên k sao cho k^2 <= n bằng cách lấy cawn bậc hai của n và chuyển kết quả về số nguyên (int)
-- Tính s=k^2, tức là số chính phương lớn nhất nhỏ hơn hoặc bằng n
-- Giảm n đi giá trị s (n -= s)
-- In ra giá trị k^2 dưới dạng k^2 với printf("%d^2", k)
-- Nếu n>0 (vẫn còn số cần phân tích), in thêm dấu cộng
-- Khi n=0, kết thúc vòng lặp và in dấu xuống dòng
++ Kiểm tra đều vào:
+- Nếu n <= 0, in ra thông báo "Khong hop le." và kết thúc hàm
+- Nếu n > 0, thực hiện các bước sau:
+Bước 1: Tính căn bậc hai lớn nhất của n và gán kết quả cho k
+Bước 2: Tính bình phương của k và gán kết quả cho s
+Bước 3: In ra k^2 trên màn hình
+BƯớc 4 Trừ s khỏi n để cập nhật giá trị còn lại
+Bước 5: Nếu n vẫn lớn hơn 0, in ra dấu cộng "+" để chuẩn bị cho số hạng tiếp theo
 
 # Hàm main
 - Khai báo biến n
