@@ -6,7 +6,7 @@ double tinh(double a, double x, int n) {
     for (int i = 0; i < n; i++) {
         kq = pow((kq + a), 2) + pow(a, 2);  
     }
-    return result + a;  
+    return kq + a;  
 }
 
 int main() {
