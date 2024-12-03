@@ -1,0 +1,16 @@
+# Hàm tinh
+1. Đầu vào:
+a: Số thực được cộng và nâng lũy thừa
+x: Giá trị khởi đầu của biểu thức
+n: Số lần lặp (số dấu ngoặc)
+2. Thực hiện:
+Bước 1: Khởi tạo kq=x
+Bước 2: Lặp n lần: kq=(kq+a)^2 + a^2
+Bước 3: Trả về giá trị kq+a
+
+# Hàm main
+Bước 1: Khai báo các biến a, x, n
+Bước 2: Nhập giá trị a, x, n từ bàn phím
+Bước 3: Kiểm tra n có phải là số tự nhiên hay không. Nếu không, in thông báo lỗi
+Bước 4: Nếu hợp lệ gọi hàm tinh để tính giá trị biểu thức
+Bước 5: In kết quả với hai chữ số thập phân
