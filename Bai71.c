@@ -10,7 +10,7 @@ void Init()
     for(int j=0; j<size_B; j++)
     scanf("%d",&B[j]);
 }
-void Print(int A[50000], size)
+void Print(int A[50000], int size)
 {
     for(int i=0; i<size; i++) printf("%d ", A[i]);
     endl;
@@ -38,6 +38,6 @@ int main()
 {
     Init();
     Print(A,size_A);
-    Print(B, size_B);
+    Print(B,size_B);
     Solve();
 }
