@@ -20,6 +20,7 @@ void Solve()
     int i=0, j=0;
     int Res[500000], size=0;
     while(i<size_A && j <size_B)
+    {
         if(A[i]>=B[j])
         {
             Res[size++]=A[i];
@@ -27,9 +28,12 @@ void Solve()
         }
         else
         {
-            Res[size++]=B[i];
+            Res[size++]=B[j];
             j++;
         }
+    }
+    for(; i<size_A; i++) Res[size++]=A[i];
+    for(; j<size_B; j++) Res[size++]=B[j];
     Print(Res,size);
     return;
 }
