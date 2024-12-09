@@ -30,8 +30,10 @@ void Sum()
         tmp=x/10;
     }
     res[size_a-1]=a[size_a-1]+b[size_a-1]+tmp;
+    printf("Tong: ");
     for (int i=size_a-1; i>=0; i--)
     printf("%d",res[i]);
+    endl;
     return;
 }
 void swap()
@@ -63,15 +65,13 @@ void Ded()
     }
     res[size_a-1]=a[size_a-1]-b[size_a-1]-tmp;
     while(res[size_a-1]==0 && size_a>1) size_a--;
+    printf("Hieu: ");
     if((size_a!=1 || res[0]!=0) && minus)  printf("-");
     for (int i=size_a-1; i>=0; i--) printf("%d",res[i]);
 }
 int main()
 {
     INPUT();
-    printf("Tong: ");
     Sum();
-    endl;
-    printf("Hieu: ");
     Ded();
 }
