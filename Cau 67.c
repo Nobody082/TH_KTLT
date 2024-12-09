@@ -23,7 +23,7 @@ int main() {
 	scanf("%d", &n);
 	double *a = (double*)malloc(n * sizeof(double));
     if (a == NULL) {
-	printf("Không đủ bộ nhớ\n");
+	printf("Khong du bo nho\n");
         return 1;
     }
 	nhap(a, n);
