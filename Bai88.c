@@ -68,7 +68,7 @@ void Print(fraction a)
 }
 int main()
 {
-    Init()
+    Init();
     Print(sum(a,b));
     Print(ded(a,b));
     Print(mul(a,b));
