@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-int size=1;
+int size=1,n; 
 int A[1000];
+void Init()
+{
+	scanf("%d",&n);
+	A[0]=1;
+}
 void mul2(int n)
 {
 	if(n==0) return;
@@ -20,11 +25,13 @@ void mul2(int n)
 	}
 	mul2(n-1);
 }
+void Print()
+{
+	for (int i=size-1; i>=0; i--) printf("%d",A[i]);
+}
 int main()
 {
-	int n; 
-	scanf("%d",&n);
-	A[0]=1;
+	Init();
 	mul2(n);
-	for (int i=size-1; i>=0; i--) printf("%d",A[i]);
+	Print();
 }
