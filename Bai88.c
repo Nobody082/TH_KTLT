@@ -6,6 +6,11 @@ typedef struct
     int num;
     int den;
 } fraction;
+fraction a,b;
+void Init()
+{
+    scanf("%d%d%d%d",&a.num,&a.den,&b.num,&b.den);
+}
 int gcd(int a, int b)
 {
     a=abs(a); b=abs(b);
@@ -58,18 +63,14 @@ void Print(fraction a)
 {
     if(a.num%a.den==0) printf("%d",a.num/a.den);
     else printf("%d/%d",a.num,a.den);
+    endl;
     return;
 }
 int main()
 {
-    fraction a,b;
-    scanf("%d%d%d%d",&a.num,&a.den,&b.num,&b.den);
-    fraction Tong=sum(a,b),Hieu=ded(a,b),Tich=mul(a,b),Thuong=Div(a,b);
-    Print(Tong);
-    endl;
-    Print(Hieu);
-    endl;
-    Print(Tich);
-    endl;
-    Print(Thuong);
+    Init()
+    Print(sum(a,b));
+    Print(ded(a,b));
+    Print(mul(a,b));
+    Print(Div(a,b));
 }
