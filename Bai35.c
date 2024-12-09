@@ -1,10 +1,13 @@
 #include <stdio.h>
-int main()
+int A[100000],n,tmp=0,size=1;
+void Init()
 {
-    int A[100000],n,tmp=0,size=1;
-    A[1]=1;
+	A[1]=1;
     scanf("%d",&n);
-    for (int i=2; i<=n; i++)
+}
+void GT()
+{
+	for (int i=2; i<=n; i++)
     {
         for(int j=1; j<=size; j++)
         {
@@ -19,5 +22,14 @@ int main()
             tmp/=10;
         }
     }
-    for(int i=size; i>=1;i--) printf("%d",A[i]);
+}
+void Print()
+{
+	for(int i=size; i>=1;i--) printf("%d",A[i]);
+}
+int main()
+{
+   Init();
+   GT();
+   Print();
 }
