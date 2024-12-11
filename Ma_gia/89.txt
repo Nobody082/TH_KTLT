@@ -2,56 +2,54 @@ Khởi tạo:
 	Hai mảng int a,b chứa 500000 phần tử
 	int size_a=0, size_b=0
 Hàm void INPUT()
-Bước 1: Tạo 2 mảng char str1, str2 có thể chứa tối đa 500000 phần tử
-Bước 2: Nhập chuỗi kí tự vào mảng str1 và str2 
-Bước 3: gán size_a=strlen(str1), size_b=strlen(str2)
-Bước 4: vòng lặp for: biến i chạy từ 0 đến size_a-1, bước nhảy 1, chuyển các kí tự str1[size_a-1-i] từ kiểu char thành kiểu int rồi gán vào a[i]
-Bước 5: vòng lặp for: biến i chạy từ 0 đến size_b-1, bước nhảy 1, chuyển các kí tự str2[size_b-1-i] từ kiểu char thành kiểu int rồi gán vào b[i]
- 
+	Bước 1: Tạo 2 mảng char str1, str2 có thể chứa tối đa 500000 phần tử
+	Bước 2: Nhập chuỗi kí tự vào mảng str1 và str2 
+	Bước 3: gán size_a=strlen(str1), size_b=strlen(str2)
+	Bước 4: vòng lặp for: biến i chạy từ 0 đến size_a-1, bước nhảy 1, chuyển các kí tự str1[size_a-1-i] từ kiểu char thành kiểu int rồi gán vào a[i]
+	Bước 5: vòng lặp for: biến i chạy từ 0 đến size_b-1, bước nhảy 1, chuyển các kí tự str2[size_b-1-i] từ kiểu char thành kiểu int rồi gán vào b[i]
+	 
 Hàm void Sum()
-Bước 1: Nếu size_a<size_b thì a[size_a]=0 và tăng size_a lên 1 đơn vị
-		Ngược lại thì b[size_b]=0 và tăng size_b lên 1 đơn vị
-Bước 2: nếu size_a!=size_b thì quay lại bước 1
-Bước 3: khởi tạo mảng int res có kích thước size_a-1 và biến bool tmp=false;
-Bước 4: tạo biến i=0
-Bước 5: tạo biến int x=a[i]+b[i]+tmp
-Bước 6: gán res[i]=x%10	
-Bước 7: gán tmp=x/10
-Bước 8: tăng i lên 1 đơn vị nếu i<size_a-1 thì quay lại bước 5
-Bước 9: gán res[size_a-1]=a[size_a-1]+b[size_a-1]+tmp
-Bước 10: vòng lặp for: biến i chạy từ size_a-1 về 0, bước nhảy -1, in các giá trị res[i]
+	Thêm số 0 vào cuối mảng A hoặc B sao cho độ dài 2 mảng bằng nhau. Sử dụng vòng lặp để cộng các từng chữ số.
+	Bước 1: Nếu size_a!=size_b thì sang bước 2, ngược lại thì sang bước 4
+	Bước 2: Nếu size_a<size_b thì gán a[size_a]=0 và tăng size_a lên 1 đơn vị, ngược lại thì gán b[size_b]=0 và tăng size_b lên 1 đơn vị.
+	Bước 3: Quay lại bước 1
+	Bước 4: khởi tạo mảng int res có kích thước size_a-1 và biến bool tmp=false;
+	Bước 5: tạo biến i=0
+	Bước 6: tạo biến int x=a[i]+b[i]+tmp
+	Bước 7: gán res[i]=x%10	
+	Bước 8: gán tmp=x/10
+	Bước 9: tăng i lên 1 đơn vị nếu i<size_a-1 thì quay lại bước 6
+	Bước 9: gán res[size_a-1]=a[size_a-1]+b[size_a-1]+tmp
+	Bước 10: in ra dong chữ "Tong: "
+	Bước 11: vòng lặp for: biến i chạy từ size_a-1 về 0, bước nhảy -1, in các giá trị res[i]
 
-hàm void swap()
-Bước 1: tạo biến i=size_a-1
-Bước 2: tạo biến tmp=a[i]
-Bước 3: a[i]=b[i]
-Bước 4: b[i]=tmp;
-bước 5: giảm biến i đi 1 đơn vị, nếu i>=0 thì quay lại bước 2;
+Hàm void swap()
+	Hoán đổi 2 mảng A và B cho nhau
+	Bước 1: tạo biến i=size_a-1
+	Bước 2: tạo biến tmp=a[i]
+	Bước 3: a[i]=b[i]
+	Bước 4: b[i]=tmp;
+	bước 5: giảm biến i đi 1 đơn vị, nếu i>=0 thì quay lại bước 2;
 
-hàm void Ded()
+Hàm void Ded()
 Bước 1: Tạo biến bool minus=0
 Bước 2: nếu size_a!=size_b thì tiếp tục, ngược lại thì chuyển đến bước 5
-Bước 3: Nếu size_a<size_b thì a[size_a]=0 và tăng size_a lên 1 đơn vị
-		Ngược lại thì b[size_b]=0 và tăng size_b lên 1 đơn vị
+Bước 3: Nếu size_a<size_b thì a[size_a]=0 và tăng size_a lên 1 đơn vị.Ngược lại thì b[size_b]=0 và tăng size_b lên 1 đơn vị
 Bước 4: Quay lại bước 2
-Bước 5: tạo biến i=size_a-1, bước nhảy -1
-Bước 6: Nếu a[i]>b[i] thì chuyển đến bước 7
-		Ngược lại nếu a[i]<b[i] thì gọi hàm swap() và gán minus=true, chuyển đến bước 7
-Bước 7: Nếu i>=0 thì quay lại bước 6
+Bước 5: tạo biến i=size_a-1
+Bước 6: Nếu a[i]>b[i] thì chuyển đến bước 8. Ngược lại nếu a[i]<b[i] thì gọi hàm swap() và gán minus=true, chuyển đến bước 8
+Bước 7: Giảm i đi 1 đơn vị nếu i>=0 thì quay lại bước 6
 Bước 8: Tạo mảng res có size_a phần tử, biến bool tmp = false
 Bước 9: tạo biến i=0
 Bước 10: gán res[i]=a[i]-b[i]-tmp
-Bước 11: nếu res[i]<0  thì res[i]=res[i]+10 đồng thời gán biến tmp=true
-		 ngược lại thì gán tmp=false
+Bước 11: nếu res[i]<0  thì res[i]=res[i]+10 đồng thời gán biến tmp=true. Ngược lại thì gán tmp=false
 Bước 12: Tăng i lên 1 đơn vị, nếu i<size_a-1 thì quay lại bước 10
 Bước 13: gán res[size_a-1]=a[size_a-1]-b[size_a-1]-tmp
-Bước 14: Nếu res[size_a-1]=0 và size_a>1 thì giảm size_a đi 1 đơn vị
-		 Ngược lại thì chuyển đển bước 16
+Bước 14: Nếu res[size_a-1]=0 và size_a>1 thì giảm size_a đi 1 đơn vị. Ngược lại thì chuyển đển bước 16
 Bước 15: Quay lại bước 14
-Bước 16: nếu (size_a!=1 hoặc res[0]!=0) và minus=true thì in ra dấu '-'
-Bước 17: Tạo biến int i =size_a-1
-Bước 18: in giá trị res[i]
-Bước 19: giảm i đi 1 đơn vị, nếu i>=0 thì quay lại bước 18
+Bước 16: in ra dòng chữ "Hieu: "
+Bước 17: nếu (size_a!=1 hoặc res[0]!=0) và minus=true thì in ra dấu '-'
+Bước 18: Dùng vòng for, biến i chạy từ size_a-1 về 0, in ra các giá trị res[i]
 
 hàm int main()
 Bước 1: gọi hàm INPUT()
