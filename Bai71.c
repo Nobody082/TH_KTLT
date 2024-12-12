@@ -18,23 +18,21 @@ void Print(int A[50000], int size)
 void Solve()
 {
     int i=0, j=0;
-    int Res[500000], size=0;
     while(i<size_A && j <size_B)
     {
         if(A[i]>=B[j])
         {
-            Res[size++]=A[i];
+            printf("%d ",A[i]);
             i++;
         }
         else
         {
-            Res[size++]=B[j];
+            printf("%d ", B[j]);
             j++;
         }
     }
-    for(; i<size_A; i++) Res[size++]=A[i];
-    for(; j<size_B; j++) Res[size++]=B[j];
-    Print(Res,size);
+    for(; i<size_A; i++) printf("%d ", A[i]);
+    for(; j<size_B; j++) printf("%d ", B[j]);
     return;
 }
 
