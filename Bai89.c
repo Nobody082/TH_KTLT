@@ -3,20 +3,18 @@
 #include <string.h>
 #include <stdlib.h>
 #define endl printf("\n")
-int a[500000],b[500000];
-int size_a=0, size_b=0;
-void INPUT()
+void INPUT(int *a, int * b, int *size_a, int *size_b)
 {
-    char str1[500000], str2[500000];
+    char str1[50000], str2[50000];
     scanf("%s %s",str1,str2);
-    size_a=strlen(str1); size_b=strlen(str2);
-    for (int i=0; i<size_a; i++)
-    a[i]=(str1[size_a-1-i]-'0');
-    for (int i=0; i<size_b; i++)
-    b[i]=(str2[size_b-1-i]-'0');
+    *size_a=strlen(str1); *size_b=strlen(str2);
+    for (int i=0; i<*size_a; i++)
+    a[i]=(str1[*size_a-1-i]-'0');
+    for (int i=0; i<*size_b; i++)
+    b[i]=(str2[*size_b-1-i]-'0');
     return;
 }
-void Sum()
+void Sum(int a[], int b[], int size_a, int size_b)
 {
     while(size_a!=size_b)
     if(size_a<size_b) a[size_a++]=0;
@@ -36,7 +34,7 @@ void Sum()
     endl;
     return;
 }
-void swap()
+void swap(int *a, int *b, int size_a)
 {
     for (int i=size_a-1; i>=0; i--) 
     {
@@ -46,7 +44,7 @@ void swap()
     }
     return;
 }
-void Ded()
+void Ded(int a[], int b[], int size_a, int size_b)
 {
     bool minus=0;
     while(size_a!=size_b)
@@ -54,7 +52,7 @@ void Ded()
     else b[size_b++]=0;
     for (int i=size_a-1; i>=0; i--)
     if(a[i]>b[i]) break;
-    else if(a[i]<b[i]) {swap(); minus=1; break;}
+    else if(a[i]<b[i]) {swap(a,b, size_a); minus=1; break;}
     int res[size_a];
     bool tmp=0;
     for (int i=0; i<size_a-1; i++)
@@ -71,7 +69,9 @@ void Ded()
 }
 int main()
 {
-    INPUT();
-    Sum();
-    Ded();
+    int a[50000],b[50000];
+    int size_a, size_b;
+    INPUT(a,b, &size_a, &size_b);
+    Sum(a,b,size_a, size_b);
+    Ded(a,b, size_a, size_b);
 }
