@@ -1,10 +1,7 @@
-Khởi tạo:
-	biến int size=1;
-	mảng int A chứa 1000 phần tử
-Hàm void Init():
+Hàm void Init(int *A, int *n):
 	Bước 1: Nhập vào giá trị n
 	Bước 2: Gán A[0]=1
-Hàm void mul2(int n):
+Hàm void mul2(int *A, int n, int *size):
 	Sử dụng đệ quy để tính 2^n, sử dụng mảng để lưu kết quả, tránh tràn số.Xử lý phép nhân bằng vòng lặp.
 	Bước 1: nếu n=0 thì thoát khỏi hàm
 	Bước 2: tạo biến int tmp=0;
@@ -12,18 +9,20 @@ Hàm void mul2(int n):
 	Bước 4: gán tmp=tmp+A[i]*2
 	Bước 5: gán A[i]=tmp%10
 	Bước 6: gán tmp=tmp/10
-	Bước 7: tăng i lên 1 đơn vị, nếu i<size thì quay lại bước 4
-	Bước 8: gán A[size]=tmp%10
-	Bước 9: gán tmp=tmp/10
-	Bước 10: tăng giá trị size lên 1 đơn vị;
-	Bước 11: Nếu size>0 quay lại bước 8
-	Bước 12: Dùng đệ quy, gọi lại hàm mul2 với giá trị n=n-1 ( mul2(n-1) )
-Hàm void Print()
-	Sử dụng vòng for chạy từ size-1 về 0 để in ra các phần tử của A[i]
+	Bước 7: tăng i lên 1 đơn vị, nếu i<*size thì quay lại bước 4
+	Bước 8: Nếu size>0 thì sang bước 9, ngược lại thì chuyển sang bước 13
+	Bước 9: gán A[*size]=tmp%10
+	Bước 10: gán tmp=tmp/10
+	Bước 11: tăng giá trị *size lên 1 đơn vị;
+	Bước 12: quay lại bước 8
+	Bước 13: Dùng đệ quy, gọi lại hàm mul2 với giá trị n=n-1 ( mul2(A, n-1, size) )
+Hàm void Print(int *A, int *size)
+	Sử dụng vòng for chạy từ *size-1 về 0 để in ra các phần tử của A[i]
 Hàm int main()
-	Bước 1: Gọi hàm Init()
-	Bước 2: Gọi hàm mul2(n)
-	Bước 3: Gọi hàm Print()
+	Bước 1: Tạo mảng A[1000], biến int size=0 và biến int n;
+	Bước 2: Gọi hàm Init(A, &n)
+	Bước 3: Gọi hàm mul2(A, n, &size)
+	Bước 4: Gọi hàm Print(A, *size)
 
 input 1: 10
 output 1: 1024
