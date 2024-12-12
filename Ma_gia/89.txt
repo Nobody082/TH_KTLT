@@ -1,14 +1,11 @@
-Khởi tạo:
-	Hai mảng int a,b chứa 500000 phần tử
-	int size_a=0, size_b=0
-Hàm void INPUT()
-	Bước 1: Tạo 2 mảng char str1, str2 có thể chứa tối đa 500000 phần tử
+Hàm void INPUT(int *a, int *b, int *size_a, int *size_b)
+	Bước 1: Tạo 2 mảng char str1, str2 có thể chứa tối đa 50000 phần tử
 	Bước 2: Nhập chuỗi kí tự vào mảng str1 và str2 
-	Bước 3: gán size_a=strlen(str1), size_b=strlen(str2)
-	Bước 4: vòng lặp for: biến i chạy từ 0 đến size_a-1, bước nhảy 1, chuyển các kí tự str1[size_a-1-i] từ kiểu char thành kiểu int rồi gán vào a[i]
-	Bước 5: vòng lặp for: biến i chạy từ 0 đến size_b-1, bước nhảy 1, chuyển các kí tự str2[size_b-1-i] từ kiểu char thành kiểu int rồi gán vào b[i]
+	Bước 3: gán *size_a=strlen(str1), *size_b=strlen(str2)
+	Bước 4: vòng lặp for: biến i chạy từ 0 đến *size_a-1, bước nhảy 1, chuyển các kí tự str1[*size_a-1-i] từ kiểu char thành kiểu int rồi gán vào a[i]
+	Bước 5: vòng lặp for: biến i chạy từ 0 đến *size_b-1, bước nhảy 1, chuyển các kí tự str2[*size_b-1-i] từ kiểu char thành kiểu int rồi gán vào b[i]
 	 
-Hàm void Sum()
+Hàm void Sum(int a[], int b[], int size_a, int size_b)
 	Thêm số 0 vào cuối mảng A hoặc B sao cho độ dài 2 mảng bằng nhau. Sử dụng vòng lặp để cộng các từng chữ số.
 	Bước 1: Nếu size_a!=size_b thì sang bước 2, ngược lại thì sang bước 4
 	Bước 2: Nếu size_a<size_b thì gán a[size_a]=0 và tăng size_a lên 1 đơn vị, ngược lại thì gán b[size_b]=0 và tăng size_b lên 1 đơn vị.
@@ -23,7 +20,7 @@ Hàm void Sum()
 	Bước 10: in ra dong chữ "Tong: "
 	Bước 11: vòng lặp for: biến i chạy từ size_a-1 về 0, bước nhảy -1, in các giá trị res[i]
 
-Hàm void swap()
+Hàm void swap(int *a, int *b, int size_a)
 	Hoán đổi 2 mảng A và B cho nhau
 	Bước 1: tạo biến i=size_a-1
 	Bước 2: tạo biến tmp=a[i]
@@ -31,30 +28,31 @@ Hàm void swap()
 	Bước 4: b[i]=tmp;
 	bước 5: giảm biến i đi 1 đơn vị, nếu i>=0 thì quay lại bước 2;
 
-Hàm void Ded()
-Bước 1: Tạo biến bool minus=0
-Bước 2: nếu size_a!=size_b thì tiếp tục, ngược lại thì chuyển đến bước 5
-Bước 3: Nếu size_a<size_b thì a[size_a]=0 và tăng size_a lên 1 đơn vị.Ngược lại thì b[size_b]=0 và tăng size_b lên 1 đơn vị
-Bước 4: Quay lại bước 2
-Bước 5: tạo biến i=size_a-1
-Bước 6: Nếu a[i]>b[i] thì chuyển đến bước 8. Ngược lại nếu a[i]<b[i] thì gọi hàm swap() và gán minus=true, chuyển đến bước 8
-Bước 7: Giảm i đi 1 đơn vị nếu i>=0 thì quay lại bước 6
-Bước 8: Tạo mảng res có size_a phần tử, biến bool tmp = false
-Bước 9: tạo biến i=0
-Bước 10: gán res[i]=a[i]-b[i]-tmp
-Bước 11: nếu res[i]<0  thì res[i]=res[i]+10 đồng thời gán biến tmp=true. Ngược lại thì gán tmp=false
-Bước 12: Tăng i lên 1 đơn vị, nếu i<size_a-1 thì quay lại bước 10
-Bước 13: gán res[size_a-1]=a[size_a-1]-b[size_a-1]-tmp
-Bước 14: Nếu res[size_a-1]=0 và size_a>1 thì giảm size_a đi 1 đơn vị. Ngược lại thì chuyển đển bước 16
-Bước 15: Quay lại bước 14
-Bước 16: in ra dòng chữ "Hieu: "
-Bước 17: nếu (size_a!=1 hoặc res[0]!=0) và minus=true thì in ra dấu '-'
-Bước 18: Dùng vòng for, biến i chạy từ size_a-1 về 0, in ra các giá trị res[i]
+Hàm void Ded(int a[], int b[], int size_a, int size_b)
+	Bước 1: Tạo biến bool minus=0
+	Bước 2: nếu size_a!=size_b thì tiếp tục, ngược lại thì chuyển đến bước 5
+	Bước 3: Nếu size_a<size_b thì a[size_a]=0 và tăng size_a lên 1 đơn vị.Ngược lại thì b[size_b]=0 và tăng size_b lên 1 đơn vị
+	Bước 4: Quay lại bước 2
+	Bước 5: tạo biến i=size_a-1
+	Bước 6: Nếu a[i]>b[i] thì chuyển đến bước 8. Ngược lại nếu a[i]<b[i] thì gọi hàm swap() và gán minus=true, chuyển đến bước 8
+	Bước 7: Giảm i đi 1 đơn vị nếu i>=0 thì quay lại bước 6
+	Bước 8: Tạo mảng res có size_a phần tử, biến bool tmp = false
+	Bước 9: tạo biến i=0
+	Bước 10: gán res[i]=a[i]-b[i]-tmp
+	Bước 11: nếu res[i]<0  thì res[i]=res[i]+10 đồng thời gán biến tmp=true. Ngược lại thì gán tmp=false
+	Bước 12: Tăng i lên 1 đơn vị, nếu i<size_a-1 thì quay lại bước 10
+	Bước 13: gán res[size_a-1]=a[size_a-1]-b[size_a-1]-tmp
+	Bước 14: Nếu res[size_a-1]=0 và size_a>1 thì giảm size_a đi 1 đơn vị. Ngược lại thì chuyển đển bước 16
+	Bước 15: Quay lại bước 14
+	Bước 16: in ra dòng chữ "Hieu: "
+	Bước 17: nếu (size_a!=1 hoặc res[0]!=0) và minus=true thì in ra dấu '-'
+	Bước 18: Dùng vòng for, biến i chạy từ size_a-1 về 0, in ra các giá trị res[i]
 
 hàm int main()
-Bước 1: gọi hàm INPUT()
-Bước 2: gọi hàm Sum()
-Bước 3: Gọi hàm Ded()
+	Bước 1: tạo 2 mảng a[50000] và b[50000], 2 biến size_a, size_b
+	Bước 2: gọi hàm INPUT(a, b, &size_a, &size_b)
+	Bước 3: gọi hàm Sum(a, b, size_a, size_b)
+	Bước 4: Gọi hàm Ded(a, b, size_a, size_b)
  
 input 1: 
 	26624732647823234
