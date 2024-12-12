@@ -1,26 +1,23 @@
-Khởi tạo:
-	Mảng int A, B chứa 50000 phần tử
-	biến int size_A=0 và size_B=0
-Hàm void Init()
+Hàm void Init(int *A, int *B, int *size_A, int *size_B)
 	Bước 1: Nhập kích thước của 2 mảng A,B vào biến size_A và size_B
 	Bước 2: Dùng vòng lặp for để nhập các giá trị A[i]
 	Bước 3: Dùng vòng lặp for để nhập các giá trị B[j]
-Hàm void Print(int A[50000], int size)
+Hàm void Print(int *A, int *size)
 	Bước 1: Dùng vòng lặp for chạy từ 0 đến size-1 và in ra các phần tử A[i] 
 	Bước 2: in kí tự xuống dòng('\n')
 Hàm void Solve()
 	Sử dụng 2 con trỏ i,j để so sánh 2 giá trị A[i] và B[j], lưu giá trị lớn hơn vào mảng Res.
-	Bước 1: khởi tạo 2 biến int i=0 và j=0, mảng Res[500000] và biến size=0
+	Bước 1: khởi tạo 2 biến int i=0 và j=0
 	Bước 2: Nếu i<size_A và j<size_B thì sang bước 3, ngược lại thì chuyển đến bước 5
-	Bước 3: Nếu A[i]>=B[i] thì gán Res[size]=A[i] sau đó tăng size và i lên 1 đơn vị. Ngược lại thì gán Res[size]=B[j] sau đó tăng j và size lên 1 đơn vị.
+	Bước 3: Nếu A[i]>=B[i] thì in ra giá trị A[i] sau đó tăng i lên 1 đơn vị. Ngược lại thì in ra giá trị B[j] sau đó tăng j lên 1 đơn vị.
 	Bước 4: Quay lại bước 2
-	Bước 5: Dùng vòng for để đưa các giá trị còn lại trong mảng A hoặc mảng B vào mảng Res
-	Bước 6: gọi hàm Print(Res,size)
+	Bước 5: Dùng vòng for để in các giá trị còn lại trong mảng A hoặc mảng B
 Hàm int main()
-Bước 1: Gọi hàm Init()
-Bước 2: Gọi hàm Print(A, size_A)
-Bước 3: Gọi hàm Print(B, size_B)
-Bước 4: Gọi hàm Solve()
+	Bước 1: Tạo hai mảng A[50000] và B[50000], biến int size_A, int size_B 
+	Bước 2: Gọi hàm Init(A, B, &size_A, &size_B)
+	Bước 3: Gọi hàm Print(A, &size_A)
+	Bước 4: Gọi hàm Print(B, &size_B)
+	Bước 5: Gọi hàm Solve(A, B, size_A, size_B)
 
 input 1:
 	10 8
