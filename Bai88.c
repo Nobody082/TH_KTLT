@@ -6,10 +6,10 @@ typedef struct
     int num;
     int den;
 } fraction;
-fraction a,b;
-void Init()
+void Init(fraction *a, fraction *b)
 {
-    scanf("%d%d%d%d",&a.num,&a.den,&b.num,&b.den);
+    scanf("%d%d%d%d",&a->num, &a->den, &b->num, &b->den);
+
 }
 int gcd(int a, int b)
 {
@@ -68,7 +68,8 @@ void Print(fraction a)
 }
 int main()
 {
-    Init();
+    fraction a,b;
+    Init(&a, &b);
     Print(sum(a,b));
     Print(ded(a,b));
     Print(mul(a,b));
