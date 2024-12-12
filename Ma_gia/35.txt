@@ -1,7 +1,7 @@
 Hàm void Init(int *A, int *n):
   Bước 1: Gán A[0]=1
   Bước 2: Nhập vào giá trị n
-Hàm void GT():
+Hàm void GT(int *A, int *size, int tmp, int n):
   Sử dụng vòng lặp lồng nhau để nhân mảng A với biến i(2<=i<=n), mỗi phần tử của mảng A chứa 1 giá trị nguyên A[j]<10 là một chữ số của kết quả cuối cùng.
   Bước 1: tạo biến i=2
   Bước 2: tạo biến j=0
@@ -15,7 +15,7 @@ Hàm void GT():
   Bước 10: gán tmp=tmp/10;
   Bước 11: quay lại bước 8
   Bước 12: tăng i lên 1 đơn vị, nếu i<=n thì quay lại bước 2
-Hàm void Print(int A, int size):
+Hàm void Print(int A[], int size):
    vòng lặp for: biến i chạy từ size-1 về 1 và in ra các giá trị A[i];
 hàm int main():
 	Bước 1: Khởi tạo mảng A có kích thước 100000 phần tử, biến n, size=1
