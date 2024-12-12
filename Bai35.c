@@ -1,15 +1,14 @@
 #include <stdio.h>
-int A[100000],n,tmp=0,size=1;
-void Init()
+void Init(int *A, int *n)
 {
-	A[1]=1;
-    scanf("%d",&n);
+	A[0]=1;
+    scanf("%d",n);
 }
-void GT()
+void GT(int *A, int *size, int tmp, int n)
 {
 	for (int i=2; i<=n; i++)
     {
-        for(int j=1; j<=size; j++)
+        for(int j=0; j<*size; j++)
         {
             int save=tmp;
             tmp+=(A[j]*i);
@@ -18,18 +17,19 @@ void GT()
         }
         while (tmp>0)
         {
-            A[++size]=tmp%10;
+            A[++(*size)-1]=tmp%10;
             tmp/=10;
         }
     }
 }
-void Print()
+void Print(int A[], int size)
 {
-	for(int i=size; i>=1;i--) printf("%d",A[i]);
+	for(int i=size-1; i>=0;i--) printf("%d",A[i]);
 }
 int main()
 {
-   Init();
-   GT();
-   Print();
+    int A[100000],n,size=1;
+    Init(A, &n);
+    GT(A, &size, 0, n);
+    Print(A, size);
 }
