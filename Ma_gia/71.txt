@@ -5,7 +5,7 @@ Hàm void Init(int *A, int *B, int *size_A, int *size_B)
 Hàm void Print(int *A, int *size)
 	Bước 1: Dùng vòng lặp for chạy từ 0 đến size-1 và in ra các phần tử A[i] 
 	Bước 2: in kí tự xuống dòng('\n')
-Hàm void Solve(int A[], int B[], int size_A, size_B)
+Hàm void Solve(int A[], int B[], int size_A, int size_B)
 	Sử dụng 2 con trỏ i,j để so sánh 2 giá trị A[i] và B[j], lưu giá trị lớn hơn vào mảng Res.
 	Bước 1: khởi tạo 2 biến int i=0 và j=0
 	Bước 2: Nếu i<size_A và j<size_B thì sang bước 3, ngược lại thì chuyển đến bước 5
