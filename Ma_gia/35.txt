@@ -1,27 +1,27 @@
-Khởi tạo:
-  Mảng A có kích thước 100000 phần tử; biến n,tmp=0, size=1
-Hàm void Init():
-  Bước 1: Gán A[1]=1
+Hàm void Init(int *A, int *n):
+  Bước 1: Gán A[0]=1
   Bước 2: Nhập vào giá trị n
 Hàm void GT():
   Sử dụng vòng lặp lồng nhau để nhân mảng A với biến i(2<=i<=n), mỗi phần tử của mảng A chứa 1 giá trị nguyên A[j]<10 là một chữ số của kết quả cuối cùng.
   Bước 1: tạo biến i=2
-  Bước 2: tạo biến j=1
+  Bước 2: tạo biến j=0
   Bước 3: tạo biến save=tmp
   Bước 4: gán tmp=tmp+A[j]*i
   Bước 5: gán A[j]=(A[j]*i+save)%10
   Bước 6: gán tmp=tmp/10;
-  Bước 7: tăng j lên 1 đơn vị, nếu j<=size thì quay lại bước 3
-  Bước 8: tăng giá trị của size lên 1 và gán A[size]=tmp%10;
-  Bước 9: gán tmp=tmp/10;
-  Bước 10: nếu tmp>0 thì quay lại bước 8
-  Bước 11: tăng i lên 1 đơn vị, nếu i<=n thì quay lại bước 2
-Hàm void Print():
-   vòng lặp for: biến i chạy từ size về 1, bước nhảy -1, in ra các giá trị A[i];
+  Bước 7: tăng j lên 1 đơn vị, nếu j<*size thì quay lại bước 3
+  Bước 8: nếu tmp>0 thì sang bước 9, ngược lại thì sang bước 12
+  Bước 9: gán A[*size-1]=tmp%10 rồi tăng giá trị của *size lên 1
+  Bước 10: gán tmp=tmp/10;
+  Bước 11: quay lại bước 8
+  Bước 12: tăng i lên 1 đơn vị, nếu i<=n thì quay lại bước 2
+Hàm void Print(int A, int size):
+   vòng lặp for: biến i chạy từ size-1 về 1 và in ra các giá trị A[i];
 hàm int main():
-Bước 1: Gọi hàm Init() 
-Bước 2: Gọi hàm GT()
-Bước 3: Gọi hàm Print()
+	Bước 1: Khởi tạo mảng A có kích thước 100000 phần tử, biến n, size=1
+	Bước 2: Gọi hàm Init(A, &n) 
+	Bước 3: Gọi hàm GT(A, &size, 0, n)
+	Bước 4: Gọi hàm Print(A, size)
 
 input 1: 10
 output 1: 3628800
