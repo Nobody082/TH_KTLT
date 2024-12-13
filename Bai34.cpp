@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-#include <ctype.h>
-#include <stdlib.h>
+#include <stdbool.h>
+
 bool check(char s[])
 {
 	long long len;
