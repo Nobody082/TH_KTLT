@@ -1,18 +1,34 @@
 # Hàm chinhphuong
-+ Kiểm tra đều vào:
-- Nếu n <= 0, in ra thông báo "Khong hop le." và kết thúc hàm
-- Nếu n > 0, thực hiện các bước sau:
-Bước 1: Tính căn bậc hai lớn nhất của n và gán kết quả cho k
-Bước 2: Tính bình phương của k và gán kết quả cho s
-Bước 3: In ra k^2 trên màn hình
-BƯớc 4 Trừ s khỏi n để cập nhật giá trị còn lại
-Bước 5: Nếu n vẫn lớn hơn 0, in ra dấu cộng "+" để chuẩn bị cho số hạng tiếp theo
+Bước 1: Khởi tạo bộ nhớ:
+- Tạo mảng dp để lưu số lượng số chính phương nhỏ nhất cho mỗi số từ 0 đến n.
+- Tạo mảng squares để lưu lại số chính phương đã chọn tại mỗi bước.
+Bước 2: Xử lý bằng lập trình động:
+- Đặt giá trị cơ sở: dp[0] = 0 (số 0 không cần số chính phương nào để biểu diễn).
+- Với mỗi số i từ 1 đến n:
+    + Khởi tại dp[i] = INT_MAX (giá trị lớn nhất).
+    + Với mỗi số chính phương j^2<=i:
+        + Nếu dp[i - j^2] + 1 < dp[i]:
+            + Cập nhật dp[i] = dp[i - j^2] + 1.
+            + Lưu số j vào squares[i].
+Bước 3: Truy vết kết quả:
+- Dùng mảng squares để truy vết lại các số chính phương tạo thành n:
+    + Khởi tạo biến temp = n và mảng result để lưu kết quả.
+    + Lặp khi temp > 0:
+        + Thêm squares[temp] vào mảng result.
+        + Trừ temp đo squares[temp]^2.
+Bước 4: In kết quả:
+- Duyệt ngược mảng result và in theo định dạng x^2 + y^2 + z^2.
+Bước 5: Giải phóng mảng dp và squares.
 
 # Hàm main
-- Khai báo biến n
-- Nhập giá trị n từ bàn phím
-- Gọi hàm chinhphuong, truyền giá trị n vào hàm chinhphuong để thực hiện phân tích
-- Trả về giá trị 0 để chỉ báo chương trình đã kết thúc thành công
+- Khai báo biến n.
+- Nhập giá trị n từ bàn phím.
+- Kiểm tra điều kiện:
+    + Nếu n < 0 hoặc n > 7000000:
+         + In ra "So khong hop le."
+         + Thoát chương trình
+- Gọi hàm chinhphuong(n) để xử lý và in kết quả.
+- Trả về giá trị 0 để chỉ báo chương trình đã kết thúc thành công.
 
 Input1:
 30
