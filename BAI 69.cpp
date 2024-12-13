@@ -11,7 +11,7 @@ void xoaPhanTu(int A[], int *n, int k){
         printf("Chi so khong hop le!\n");
     return;
     }
-    for(int i = k; i < *n - 1; i++){
+    for(int i = k-1; i < *n - 2; i++){
         A[i] = A[i + 1];
     }
     (*n)--;
@@ -25,9 +25,9 @@ void xuatMang(int A[], int n){
 int main(){
     int n, k;
     scanf("%d", &n);
+    scanf("%d", &k);
     int A[100000];
     nhapMang(A, &n);
-    scanf("%d", &k);
     xoaPhanTu(A, &n, k);
     xuatMang(A,n);
     return 0;
