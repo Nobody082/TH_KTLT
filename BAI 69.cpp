@@ -11,7 +11,7 @@ void xoaPhanTu(int A[], int *n, int k){
         printf("Chi so khong hop le!\n");
     return;
     }
-    for(int i = k-1; i < *n - 2; i++){
+    for(int i = k-1; i < *n - 1; i++){
         A[i] = A[i + 1];
     }
     (*n)--;
