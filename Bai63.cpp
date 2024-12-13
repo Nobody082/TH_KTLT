@@ -7,21 +7,25 @@ bool check(long long n)
 	t=sqrt(n);
 	return t*t==n;
 }
-int main()
+void nhapmang(long long *a, long long n)
 {
-	long long n,s;s=0;
-	scanf("%lld",&n);
-	long long a[n];
-	for (long long i=0;i<n;i++)
+for (long long i=0;i<n;i++)
 	{
 		scanf("%lld",&a[i]);
-	}
-	for (long long i=0;i<n;i++)
+	}	
+}
+void inmang(long long *a, long long n)
+{
+for (long long i=0;i<n;i++)
 	{
 		printf("%lld ",a[i]);
 		
-	}printf("\n");
-    for (long long i=0;i<n;i++)
+	}printf("\n");	
+}
+void chinhphuong(long long *a, long long n)
+{
+	long long s=0;
+		  for (long long i=0;i<n;i++)
     {
     	if (check(a[i]))
     	{
@@ -30,7 +34,21 @@ int main()
     		
 		}
 		
-		
 	}printf("\n");
 	printf("%lld ",s);
+}
+int main()
+{
+	long long n;
+	scanf("%lld",&n);
+	long long *a = (long long *)malloc(n * sizeof(long long));
+    
+
+	nhapmang(a,n);
+	inmang(a,n);
+	chinhphuong(a,n);
+	
+	return 0;
+    
+	
 }
