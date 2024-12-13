@@ -3,7 +3,7 @@
 #include <math.h>
 #include <limits.h>
 
-void findMinSquares(int n) {
+void chinhphuong(int n) {
     int *dp = (int *)malloc((n + 1) * sizeof(int));
     int *squares = (int *)malloc((n + 1) * sizeof(int));
 
@@ -45,6 +45,6 @@ int main() {
         printf("So khong hop le.\n");
         return 1;
     }
-    findMinSquares(n);
+    chinhphuong(n);
     return 0;
 }
